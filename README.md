@@ -49,5 +49,36 @@ poetry init
 ```
 and follow the interactive instructions.
 
+### Adding dependencies
+Poetry manages all dependencies of this repository, for details see [dependency-specification](https://python-poetry.org/docs/dependency-specification/). In short, to add a new dependency, such as `pandas`, run:
+```
+poetry add pandas
+```
+
+For a dependency of only the testing environment, such as `pytest`, run:
+```
+poetry add --group dev pytest
+```
+
+### Versioning
+Poetry manages the version of this project, below I summarize the main points from [poetry version management](https://python-poetry.org/docs/cli/#version). To see the current version run:
+```
+poetry version
+```
+To bump the version of the project and write the new version back to `pyproject.toml` run:
+```
+poetry version <major/minor/patch>
+```
+e.g. to bump to the next major version run:
+```
+poetry version major
+```
+The effect of these rules are illustrated in the table below:
+|  rule 	| before 	| after 	|
+|:-----:	|:------:	|:-----:	|
+| major 	| 1.3.0  	| 2.0.0 	|
+| minor 	| 2.1.4  	| 2.2.0 	|
+| patch 	| 4.1.1  	| 4.1.2 	|
+
 ## Credits
 This project is inspired by [hypermodern-python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
