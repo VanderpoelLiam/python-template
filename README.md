@@ -35,4 +35,19 @@ Then set this to the default Python version inside the repository:
 ```
 pyenv local python-template
 ```
+This initializes the `pyproject.toml` file.
 
+## Setting up the project using Poetry
+[Poetry](https://python-poetry.org/) is a tool to manage Python packaging and dependencies. See the [docs](https://python-poetry.org/docs/) for up to date installation instructions. To install Poetry run:
+```
+curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.2.2 python3 -
+```
+
+To initialize the project with poetry run:
+```
+poetry init
+```
+and follow the interactive instructions.
+
+## Credits
+This project is inspired by [hypermodern-python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
