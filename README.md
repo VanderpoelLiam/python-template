@@ -40,7 +40,7 @@ This initializes the `pyproject.toml` file.
 ## Setting up the project using Poetry
 [Poetry](https://python-poetry.org/) is a tool to manage Python packaging and dependencies. See the [docs](https://python-poetry.org/docs/) for up to date installation instructions. To install Poetry run:
 ```
-curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.2.2 python3 -
+curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 To initialize the project with poetry run:

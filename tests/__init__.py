@@ -1,1 +1,1 @@
-"""Tests for Python project template"""
+"""Test suite for the python_template package."""

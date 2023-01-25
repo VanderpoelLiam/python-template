@@ -1,1 +1,1 @@
-"""A Python project template"""
+"""Python Template."""

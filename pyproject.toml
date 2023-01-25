@@ -2,8 +2,10 @@
 name = "python-template"
 version = "0.1.0"
 description = "A Python project template"
-authors = ["Liam <vanderpoel.liam@gmail.com>"]
+authors = ["Liam van der Poel <vanderpoel.liam@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/VanderpoelLiam/python-template"
 repository = "https://github.com/VanderpoelLiam/python-template"
 
 [tool.poetry.dependencies]
