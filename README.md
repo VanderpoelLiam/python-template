@@ -1,8 +1,21 @@
 # python-template
 A Python project template
 
+## Quickstart 
+It is recommended to set up Python using [pyenv](https://github.com/pyenv/pyenv#getting-pyenv). This quickstart guide assumes Python is already installed.
+
+Install [Poetry](https://python-poetry.org/):
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+Install [Nox]() and [nox-poetry](https://nox-poetry.readthedocs.io):
+```
+pip install nox nox-poetry
+```
+
 ## Installing Python with pyenv
-We recommend using `pyenv` to manage different Python environments, see [Pyenv](https://github.com/pyenv/pyenv#getting-pyenv) for more details.
+We recommend using `pyenv` to manage different Python environments, see [pyenv](https://github.com/pyenv/pyenv#getting-pyenv) for more details.
 To install `pyenv` run:
 ```
 curl https://pyenv.run | bash
@@ -49,7 +62,28 @@ poetry init
 ```
 and follow the interactive instructions.
 
-### Adding dependencies
+## Testing
+To test the code run:
+```
+nox -r
+```
+Nox uses `noxfile.py` for configuration. By default Nox recreates the virtual environments from scratch on each run. To speed things up we recommend passing the `-r` flag, see [re-using-virtualenvs](https://nox.thea.codes/en/stable/usage.html#re-using-virtualenvs) for details.
+
+You can pass any additional arguments to `pytest` using `--`. For example, to run a specific test module:
+```
+nox -r -- tests/test_console.py
+```
+If you do not want to run any linting. You can run only the tests with:
+```
+nox -rs tests
+```
+
+You can also run a single test without linting:
+```
+nox -rs tests -- -k "test_main_succeeds"
+```
+
+## Adding dependencies
 Poetry manages all dependencies of this repository, for details see [dependency-specification](https://python-poetry.org/docs/dependency-specification/). In short, to add a new dependency, such as `pandas`, run:
 ```
 poetry add pandas
@@ -60,7 +94,7 @@ For a dependency of only the testing environment, such as `pytest`, run:
 poetry add --group dev pytest
 ```
 
-### Versioning
+## Versioning
 Poetry manages the version of this project, below I summarize the main points from [poetry version management](https://python-poetry.org/docs/cli/#version). To see the current version run:
 ```
 poetry version
