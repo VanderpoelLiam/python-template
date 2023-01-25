@@ -4,6 +4,8 @@ A Python project template
 
 ## Quickstart
 
+### Requirements
+
 It is recommended to set up Python using [pyenv](https://github.com/pyenv/pyenv#getting-pyenv). This quickstart guide assumes Python is already installed.
 
 Install [Poetry](https://python-poetry.org/):
@@ -18,7 +20,43 @@ Install [Nox]() and [nox-poetry](https://nox-poetry.readthedocs.io):
 pip install nox nox-poetry
 ```
 
-## Installing Python with pyenv
+### Running
+
+First install the project:
+
+```
+poetry install
+```
+
+Then run the command-line interface with:
+
+```
+poetry run python-template
+```
+
+### Testing
+
+Run the full test suite:
+
+```
+nox
+```
+
+List the available Nox sessions:
+
+```
+nox --list-sessions
+```
+
+Install the pre-commit hooks:
+
+```
+nox -s pre-commit -- install
+```
+
+## Advanced setup
+
+### Installing Python with pyenv
 
 We recommend using `pyenv` to manage different Python environments, see [pyenv](https://github.com/pyenv/pyenv#getting-pyenv) for more details.
 To install `pyenv` run:
@@ -62,7 +100,7 @@ pyenv local python-template
 
 This initializes the `pyproject.toml` file.
 
-## Setting up the project using Poetry
+### Setting up the project using Poetry
 
 [Poetry](https://python-poetry.org/) is a tool to manage Python packaging and dependencies. See the [docs](https://python-poetry.org/docs/) for up to date installation instructions. To install Poetry run:
 
@@ -78,7 +116,9 @@ poetry init
 
 and follow the interactive instructions.
 
-## Testing
+## Development Guide
+
+### Testing
 
 To test the code run:
 
@@ -106,7 +146,7 @@ You can also run a single test without linting:
 nox -rs tests -- -k "test_main_succeeds"
 ```
 
-## Adding dependencies
+### Adding dependencies
 
 Poetry manages all dependencies of this repository, for details see [dependency-specification](https://python-poetry.org/docs/dependency-specification/). In short, to add a new dependency, such as `pandas`, run:
 
@@ -120,7 +160,7 @@ For a dependency of only the testing environment, such as `pytest`, run:
 poetry add --group dev pytest
 ```
 
-## Versioning
+### Versioning
 
 Poetry manages the version of this project, below I summarize the main points from [poetry version management](https://python-poetry.org/docs/cli/#version). To see the current version run:
 
