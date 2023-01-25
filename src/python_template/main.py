@@ -1,6 +1,7 @@
 """Command-line interface."""
 import click
 
+
 @click.command()
 def main():
     """Python Template."""
